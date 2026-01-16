@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { XCircle, CheckCircle } from 'lucide-react';
 import { SlideProps } from '../../types';
@@ -23,7 +22,7 @@ const Slide6: React.FC<SlideProps> = ({ isActive }) => (
         "Eu não fico rodando anúncio eterno"
       ].map((text, i) => (
         <div key={i} className="flex items-center gap-3 md:gap-4 p-4 md:p-6 border border-white/5 rounded-xl md:rounded-2xl bg-white/[0.01] opacity-60">
-          <XCircle className="text-white/20" size={20} md:size={24} />
+          <XCircle className="text-white/20" size={20} />
           <span className="text-white/40 font-bold uppercase text-[10px] md:text-sm tracking-widest">{text}</span>
         </div>
       ))}

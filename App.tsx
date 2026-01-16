@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Maximize, MousePointer2, MessageCircle, MoveRight } from 'lucide-react';
 import Slide1 from './components/slides/Slide1';
@@ -121,7 +120,7 @@ const App: React.FC = () => {
                 : `border-white/10 text-white/40 hover:border-orange-500/50 hover:text-orange-500 hover:bg-white/5 ${activeFeedback === 'prev' ? 'nav-feedback-active' : ''}`
             }`}
           >
-            <ChevronLeft size={18} md:size={20} />
+            <ChevronLeft size={20} className="w-4.5 h-4.5 md:w-5 md:h-5" />
           </button>
           <button 
             onClick={nextSlide}
@@ -132,7 +131,7 @@ const App: React.FC = () => {
                 : `border-white/10 text-white/40 hover:border-orange-500/50 hover:text-orange-500 hover:bg-white/5 ${activeFeedback === 'next' ? 'nav-feedback-active' : ''}`
             }`}
           >
-            <ChevronRight size={18} md:size={20} />
+            <ChevronRight size={20} className="w-4.5 h-4.5 md:w-5 md:h-5" />
           </button>
         </div>
 

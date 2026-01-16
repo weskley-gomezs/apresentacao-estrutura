@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { TrendingDown, Users, AlertCircle, HeartCrack } from 'lucide-react';
 import { SlideProps } from '../../types';
@@ -12,14 +11,14 @@ const Slide2: React.FC<SlideProps> = ({ isActive }) => (
     
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
       {[
-        { icon: <TrendingDown size={32} />, title: "Miopia da Captação", desc: "Focar 100% em trazer leads novos e esquecer de educar quem já paga sua conta." },
-        { icon: <HeartCrack size={32} />, title: "Perda de Confiança", desc: "Sem comunicação, o cliente se sente apenas um número. Ele vai embora por qualquer real a menos." },
-        { icon: <AlertCircle size={32} />, title: "Custo de Aquisição (CAC)", desc: "É 7x mais caro atrair um novo do que manter um atual. Você está jogando margem fora." },
-        { icon: <Users size={32} />, title: "Indicação Zero", desc: "Quem não é bem atendido no pós-venda não indica. Você morre dependendo de anúncios." },
+        { icon: <TrendingDown />, title: "Miopia da Captação", desc: "Focar 100% em trazer leads novos e esquecer de educar quem já paga sua conta." },
+        { icon: <HeartCrack />, title: "Perda de Confiança", desc: "Sem comunicação, o cliente se sente apenas um número. Ele vai embora por qualquer real a menos." },
+        { icon: <AlertCircle />, title: "Custo de Aquisição (CAC)", desc: "É 7x mais caro atrair um novo do que manter um atual. Você está jogando margem fora." },
+        { icon: <Users />, title: "Indicação Zero", desc: "Quem não é bem atendido no pós-venda não indica. Você morre dependendo de anúncios." },
       ].map((item, idx) => (
         <div key={idx} className="flex items-start gap-4 md:gap-6 group">
           <div className="flex-shrink-0 text-orange-500 p-2 md:p-3 bg-orange-500/5 rounded-xl border border-white/5 group-hover:border-orange-500/50 transition-colors">
-            {React.cloneElement(item.icon as React.ReactElement, { size: 24, className: "md:w-8 md:h-8" })}
+            {React.cloneElement(item.icon as React.ReactElement<any>, { size: 24, className: "w-6 h-6 md:w-8 md:h-8" })}
           </div>
           <div>
             <h4 className="text-lg md:text-xl font-bold text-white mb-1 md:mb-2">{item.title}</h4>
