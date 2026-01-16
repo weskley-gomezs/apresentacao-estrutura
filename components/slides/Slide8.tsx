@@ -1,23 +1,36 @@
 
 import React from 'react';
-import { TrendingUp } from 'lucide-react';
+import { CheckCircle2, XCircle } from 'lucide-react';
 import { SlideProps } from '../../types';
 
-const Slide8: React.FC<SlideProps> = () => (
-  <div className="max-w-5xl w-full text-center">
-    <div className="inline-block p-4 bg-orange-500/10 border border-orange-500/20 rounded-xl mb-8">
-      <TrendingUp className="text-orange-500" size={40} />
-    </div>
-    <h3 className="text-4xl md:text-6xl font-black text-white leading-tight mb-12">
-      Empresas que crescem não contratam <span className="text-orange-500">vendedores primeiro.</span>
-    </h3>
-    <p className="text-2xl md:text-4xl font-light text-white/70 max-w-4xl mx-auto leading-relaxed">
-      Elas <span className="text-white font-black underline decoration-orange-500">organizam o caminho</span> até a venda. O time comercial só acelera o que já está pronto.
-    </p>
-    <div className="mt-16 flex justify-center gap-4">
-      <div className="h-1 w-20 bg-orange-500"></div>
-      <div className="h-1 w-4 bg-white/20"></div>
-      <div className="h-1 w-4 bg-white/20"></div>
+const Slide8: React.FC<SlideProps> = ({ isActive }) => (
+  <div className={`max-w-5xl w-full transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <h2 className="text-orange-500 text-center text-xl font-bold uppercase tracking-[0.4em] mb-16">PARA QUEM É?</h2>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="bg-white/[0.02] p-10 rounded-3xl border border-white/5">
+        <h4 className="text-2xl font-black text-white mb-8 flex items-center gap-3">
+          <CheckCircle2 className="text-orange-500" /> PERFEITO SE:
+        </h4>
+        <ul className="space-y-6 text-white/60 text-lg">
+          <li>• Já gera leads, mas a conversão é baixa.</li>
+          <li>• Tem um time comercial de pelo menos 1 pessoa.</li>
+          <li>• O dono ainda precisa "ajudar" nas vendas.</li>
+          <li>• Quer escalar sem aumentar o custo fixo.</li>
+        </ul>
+      </div>
+
+      <div className="bg-white/[0.01] p-10 rounded-3xl border border-white/5 opacity-50">
+        <h4 className="text-2xl font-black text-white mb-8 flex items-center gap-3">
+          <XCircle className="text-white/30" /> NÃO É SE:
+        </h4>
+        <ul className="space-y-6 text-white/30 text-lg">
+          <li>• Você ainda não tem nenhum lead chegando.</li>
+          <li>• Busca uma "fórmula mágica" sem esforço.</li>
+          <li>• Acredita que marketing resolve produto ruim.</li>
+          <li>• Não quer investir em processos profissionais.</li>
+        </ul>
+      </div>
     </div>
   </div>
 );

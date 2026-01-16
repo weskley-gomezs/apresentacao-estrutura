@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Filter, Flame, BookOpen, Target, LucideIcon } from 'lucide-react';
+import { ShieldCheck, Flame, BookOpen, Target, LucideIcon } from 'lucide-react';
 import { SlideProps } from '../../types';
 
 interface MethodItem {
@@ -11,28 +11,28 @@ interface MethodItem {
 
 const Slide4: React.FC<SlideProps> = ({ isActive }) => {
   const methods: MethodItem[] = [
-    { icon: Filter, title: "Filtro", desc: "Separo quem presta de quem não presta." },
-    { icon: Flame, title: "Aquecimento", desc: "Transformo o lead morno em interessado." },
-    { icon: BookOpen, title: "Educação", desc: "Crio contexto e intenção de compra." },
-    { icon: Target, title: "Entrega", desc: "Passo o bastão para o seu time fechar." },
+    { icon: ShieldCheck, title: "Blindagem", desc: "Filtro automático de curiosos e leads sem perfil de compra." },
+    { icon: Flame, title: "Aquecimento", desc: "O lead consome seu valor antes mesmo de falar com um humano." },
+    { icon: BookOpen, title: "Consciência", desc: "Doutrinação digital sobre o porquê sua solução é a única escolha." },
+    { icon: Target, title: "Entrega High-Ticket", desc: "O vendedor recebe apenas quem já disse 'sim' para o seu valor." },
   ];
 
   return (
     <div className={`max-w-6xl w-full transition-all duration-1000 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-      <h2 className="text-orange-500 text-lg font-bold uppercase tracking-widest mb-6">Meu Método</h2>
+      <h2 className="text-orange-500 text-lg font-bold uppercase tracking-widest mb-6">A ESTRUTURA</h2>
       <h3 className="text-5xl md:text-6xl font-black text-white leading-tight mb-12">
-        Eu entro <span className="text-orange-500 italic">antes</span> da venda.
+        Eu crio a <span className="text-orange-500 italic">pré-venda</span> invisível.
       </h3>
       
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {methods.map((item, idx) => {
           const Icon = item.icon;
           return (
-            <div key={idx} className="bg-white/5 border border-white/10 p-6 rounded-2xl group hover:border-orange-500/50 transition-colors">
-              <div className="text-orange-500 mb-4">
-                <Icon size={32} />
+            <div key={idx} className="bg-white/5 border border-white/10 p-8 rounded-3xl group hover:border-orange-500/50 transition-all duration-500 hover:-translate-y-2">
+              <div className="text-orange-500 mb-6">
+                <Icon size={40} />
               </div>
-              <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
+              <h4 className="text-xl font-bold text-white mb-3">{item.title}</h4>
               <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
             </div>
           );
