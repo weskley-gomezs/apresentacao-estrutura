@@ -13,7 +13,7 @@ import Slide9 from './components/slides/Slide9';
 import Slide10 from './components/slides/Slide10';
 import Funnel3D from './components/Funnel3D';
 
-const WHATSAPP_URL = "https://wa.me/5561981535040?text=Olá, vi sua apresentação e gostaria de saber mais sobre a Estrutura Digital.";
+const WHATSAPP_URL = "https://wa.me/5561981535040?text=Olá, vi sua apresentação sobre LTV Escolar e gostaria de profissionalizar meu relacionamento com os pais.";
 
 const App: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,7 +24,7 @@ const App: React.FC = () => {
   ];
 
   const triggerFeedback = useCallback((type: 'prev' | 'next') => {
-    setActiveFeedback(null); // Reset em caso de cliques rápidos
+    setActiveFeedback(null);
     setTimeout(() => setActiveFeedback(type), 10);
     setTimeout(() => setActiveFeedback(null), 510);
   }, []);
@@ -55,28 +55,16 @@ const App: React.FC = () => {
   return (
     <div className="relative h-screen w-screen bg-black overflow-hidden flex flex-col items-center justify-center select-none">
       
-      {/* Refined Animated Background Layers */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Sublte Ambient Grid */}
         <div className="absolute inset-0 bg-grid-pattern opacity-40" />
-        
-        {/* Soft atmospheric blobs */}
         <div className="absolute top-[-25%] left-[-15%] w-[70%] h-[70%] bg-orange-600/[0.04] blur-[180px] rounded-full animate-subtle-float" />
         <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-orange-900/[0.03] blur-[150px] rounded-full animate-slow-drift" />
-        
-        {/* Delicate floating highlights */}
         <div className="absolute top-[20%] right-[15%] w-48 h-48 border border-orange-500/5 rounded-full animate-aura" />
         <div className="absolute bottom-[25%] left-[5%] w-80 h-80 border border-orange-500/[0.02] rounded-full animate-subtle-float" />
-        
-        {/* Fine vertical line accents */}
-        <div className="absolute top-0 left-1/3 w-[0.5px] h-full bg-gradient-to-b from-transparent via-orange-500/[0.05] to-transparent" />
-        <div className="absolute top-0 right-1/3 w-[0.5px] h-full bg-gradient-to-b from-transparent via-orange-500/[0.05] to-transparent" />
       </div>
 
-      {/* 3D Funnel Overlay - Persistent */}
       <Funnel3D />
 
-      {/* Slide Container */}
       <div className="w-full h-full flex items-center justify-center px-8 md:px-24 relative z-10">
         {slides.map((SlideComponent, index) => (
           <div
@@ -94,7 +82,6 @@ const App: React.FC = () => {
         ))}
       </div>
 
-      {/* Swipe Hint Indicator */}
       {currentSlide < slides.length - 1 && (
         <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 opacity-25 animate-pulse pointer-events-none">
           <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white">Próximo</span>
@@ -102,7 +89,6 @@ const App: React.FC = () => {
         </div>
       )}
 
-      {/* Persistent Floating CTA */}
       <a 
         href={WHATSAPP_URL}
         target="_blank"
@@ -110,10 +96,9 @@ const App: React.FC = () => {
         className="absolute bottom-24 right-10 z-30 flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-black px-6 py-4 rounded-full font-black text-sm uppercase transition-all hover:scale-105 shadow-[0_10px_40px_rgba(249,115,22,0.3)] md:flex hidden animate-pulse"
       >
         <MessageCircle size={20} />
-        Falar com Especialista
+        Consultoria LTV
       </a>
 
-      {/* Bottom Navigation Bar */}
       <div className="absolute bottom-10 left-0 right-0 flex items-center justify-between px-10 z-20 pointer-events-none">
         <div className="text-white/20 text-xs font-bold tracking-widest uppercase flex items-center gap-2">
            <MousePointer2 size={12} className="text-orange-500/50" />
@@ -147,14 +132,13 @@ const App: React.FC = () => {
 
         <div className="hidden lg:flex text-white/10 text-[9px] font-bold tracking-[0.2em] items-center gap-2">
            <Maximize size={10} />
-           USE O TECLADO PARA NAVEGAR
+           ESTRUTURA LTV ESCOLAR
         </div>
       </div>
 
-      {/* Subtle Branding Overlay */}
       <div className="absolute top-10 right-10 z-20 opacity-20">
         <div className="text-white font-black text-xs tracking-tighter uppercase">
-          ESTRUTURA<span className="text-orange-500">DIGITAL</span>
+          SCHOOL<span className="text-orange-500">LTV</span>
         </div>
       </div>
     </div>

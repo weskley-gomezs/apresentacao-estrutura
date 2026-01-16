@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ShieldCheck, Flame, BookOpen, Target, LucideIcon } from 'lucide-react';
+import { ShieldCheck, Heart, Users, RefreshCw, LucideIcon } from 'lucide-react';
 import { SlideProps } from '../../types';
 
 interface MethodItem {
@@ -11,17 +11,17 @@ interface MethodItem {
 
 const Slide4: React.FC<SlideProps> = ({ isActive }) => {
   const methods: MethodItem[] = [
-    { icon: ShieldCheck, title: "Blindagem", desc: "Filtro automático de curiosos e leads sem perfil de compra." },
-    { icon: Flame, title: "Aquecimento", desc: "O lead consome seu valor antes mesmo de falar com um humano." },
-    { icon: BookOpen, title: "Consciência", desc: "Doutrinação digital sobre o porquê sua solução é a única escolha." },
-    { icon: Target, title: "Entrega High-Ticket", desc: "O vendedor recebe apenas quem já disse 'sim' para o seu valor." },
+    { icon: Users, title: "Onboarding", desc: "Receba a família com um processo digital que gera segurança imediata." },
+    { icon: Heart, title: "Touchpoints", desc: "Réguas de relacionamento programadas para mostrar a evolução do aluno." },
+    { icon: ShieldCheck, title: "Escuta Ativa", desc: "Canais digitais de feedback que antecipam crises e pedidos de saída." },
+    { icon: RefreshCw, title: "Fidelização", desc: "Transformamos o encerramento do ciclo em uma renovação automática." },
   ];
 
   return (
     <div className={`max-w-6xl w-full transition-all duration-1000 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
       <h2 className="text-orange-500 text-lg font-bold uppercase tracking-widest mb-6">A ESTRUTURA</h2>
       <h3 className="text-5xl md:text-6xl font-black text-white leading-tight mb-12">
-        Eu crio a <span className="text-orange-500 italic">pré-venda</span> invisível.
+        Engenharia de <span className="text-orange-500 italic">Relacionamento.</span>
       </h3>
       
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
