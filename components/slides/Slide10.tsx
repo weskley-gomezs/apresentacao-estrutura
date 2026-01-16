@@ -3,8 +3,8 @@ import React from 'react';
 import { MessageCircle, ArrowUpRight } from 'lucide-react';
 import { SlideProps } from '../../types';
 
-const Slide10: React.FC<SlideProps> = () => (
-  <div className="max-w-4xl w-full text-center flex flex-col items-center">
+const Slide10: React.FC<SlideProps> = ({ isActive }) => (
+  <div className={`max-w-4xl w-full text-center flex flex-col items-center transition-all duration-1000 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
     <h3 className="text-4xl md:text-7xl font-black text-white mb-6 uppercase tracking-tighter">
       VENDA MAIS <br />
       <span className="text-orange-500">COM O MESMO TIME.</span>

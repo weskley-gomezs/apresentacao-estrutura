@@ -17,17 +17,31 @@ const WHATSAPP_URL = "https://wa.me/5561981535040?text=Olá, vi sua apresentaç�
 
 const App: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeFeedback, setActiveFeedback] = useState<'prev' | 'next' | null>(null);
+
   const slides = [
     Slide1, Slide2, Slide3, Slide4, Slide5, Slide6, Slide7, Slide8, Slide9, Slide10
   ];
 
+  const triggerFeedback = useCallback((type: 'prev' | 'next') => {
+    setActiveFeedback(null); // Reset em caso de cliques rápidos
+    setTimeout(() => setActiveFeedback(type), 10);
+    setTimeout(() => setActiveFeedback(null), 510);
+  }, []);
+
   const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? prev : prev + 1));
-  }, [slides.length]);
+    if (currentSlide < slides.length - 1) {
+      setCurrentSlide((prev) => prev + 1);
+      triggerFeedback('next');
+    }
+  }, [currentSlide, slides.length, triggerFeedback]);
 
   const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev === 0 ? prev : prev - 1));
-  }, []);
+    if (currentSlide > 0) {
+      setCurrentSlide((prev) => prev - 1);
+      triggerFeedback('prev');
+    }
+  }, [currentSlide, triggerFeedback]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -46,7 +60,7 @@ const App: React.FC = () => {
         {/* Sublte Ambient Grid */}
         <div className="absolute inset-0 bg-grid-pattern opacity-40" />
         
-        {/* Soft atmospheric blobs - Reduced opacity and increased blur */}
+        {/* Soft atmospheric blobs */}
         <div className="absolute top-[-25%] left-[-15%] w-[70%] h-[70%] bg-orange-600/[0.04] blur-[180px] rounded-full animate-subtle-float" />
         <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-orange-900/[0.03] blur-[150px] rounded-full animate-slow-drift" />
         
@@ -54,7 +68,7 @@ const App: React.FC = () => {
         <div className="absolute top-[20%] right-[15%] w-48 h-48 border border-orange-500/5 rounded-full animate-aura" />
         <div className="absolute bottom-[25%] left-[5%] w-80 h-80 border border-orange-500/[0.02] rounded-full animate-subtle-float" />
         
-        {/* Fine vertical line accents - Minimalist */}
+        {/* Fine vertical line accents */}
         <div className="absolute top-0 left-1/3 w-[0.5px] h-full bg-gradient-to-b from-transparent via-orange-500/[0.05] to-transparent" />
         <div className="absolute top-0 right-1/3 w-[0.5px] h-full bg-gradient-to-b from-transparent via-orange-500/[0.05] to-transparent" />
       </div>
@@ -80,7 +94,7 @@ const App: React.FC = () => {
         ))}
       </div>
 
-      {/* Swipe Hint Indicator - More subtle */}
+      {/* Swipe Hint Indicator */}
       {currentSlide < slides.length - 1 && (
         <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 opacity-25 animate-pulse pointer-events-none">
           <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white">Próximo</span>
@@ -110,14 +124,22 @@ const App: React.FC = () => {
           <button 
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className={`p-3 rounded-full border transition-all ${currentSlide === 0 ? 'border-white/5 text-white/5' : 'border-white/10 text-white/40 hover:border-orange-500/50 hover:text-orange-500 hover:bg-white/5'}`}
+            className={`p-3 rounded-full border transition-all relative ${
+              currentSlide === 0 
+                ? 'border-white/5 text-white/5' 
+                : `border-white/10 text-white/40 hover:border-orange-500/50 hover:text-orange-500 hover:bg-white/5 ${activeFeedback === 'prev' ? 'nav-feedback-active' : ''}`
+            }`}
           >
             <ChevronLeft size={20} />
           </button>
           <button 
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
-            className={`p-3 rounded-full border transition-all ${currentSlide === slides.length - 1 ? 'border-white/5 text-white/5' : 'border-white/10 text-white/40 hover:border-orange-500/50 hover:text-orange-500 hover:bg-white/5'}`}
+            className={`p-3 rounded-full border transition-all relative ${
+              currentSlide === slides.length - 1 
+                ? 'border-white/5 text-white/5' 
+                : `border-white/10 text-white/40 hover:border-orange-500/50 hover:text-orange-500 hover:bg-white/5 ${activeFeedback === 'next' ? 'nav-feedback-active' : ''}`
+            }`}
           >
             <ChevronRight size={20} />
           </button>

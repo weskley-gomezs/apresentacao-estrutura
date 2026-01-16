@@ -3,8 +3,8 @@ import React from 'react';
 import { Filter, Flame, BookOpen, Target } from 'lucide-react';
 import { SlideProps } from '../../types';
 
-const Slide4: React.FC<SlideProps> = () => (
-  <div className="max-w-6xl w-full">
+const Slide4: React.FC<SlideProps> = ({ isActive }) => (
+  <div className={`max-w-6xl w-full transition-all duration-1000 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
     <h2 className="text-orange-500 text-lg font-bold uppercase tracking-widest mb-6">Meu Método</h2>
     <h3 className="text-5xl md:text-6xl font-black text-white leading-tight mb-12">
       Eu entro <span className="text-orange-500 italic">antes</span> da venda.

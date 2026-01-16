@@ -3,8 +3,8 @@ import React from 'react';
 import { Clock, UserX, ThermometerSnowflake, Ban } from 'lucide-react';
 import { SlideProps } from '../../types';
 
-const Slide2: React.FC<SlideProps> = () => (
-  <div className="max-w-5xl w-full">
+const Slide2: React.FC<SlideProps> = ({ isActive }) => (
+  <div className={`max-w-5xl w-full transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
     <h2 className="text-orange-500 text-lg font-bold uppercase tracking-widest mb-4">O Diagnóstico</h2>
     <h3 className="text-5xl md:text-6xl font-extrabold text-white mb-16 leading-tight">
       Seu time perde tempo <br />com quem não vai comprar?
