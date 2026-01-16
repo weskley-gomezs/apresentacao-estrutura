@@ -65,7 +65,7 @@ const Funnel3D: React.FC = () => {
           </linearGradient>
 
           <radialGradient id="exit-beam" cx="100" cy="280" r="40" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#F97316" stopOpacity={0.8} />
+            <stop stopColor="#F97316" stopOpacity="0.8" />
             <stop offset="1" stopColor="#F97316" stopOpacity="0" />
           </radialGradient>
 
@@ -98,13 +98,13 @@ const Funnel3D: React.FC = () => {
         
         <g className="ring-stage">
           <ellipse cx="100" cy="100" rx="65" ry="18" stroke="#F97316" strokeWidth="1" strokeOpacity="0.3" className="pulse-glow" />
-          <text x="175" y="105" fill="#F97316" fontSize="6" fontWeight="900" opacity="0.4" className="uppercase tracking-widest">AQUISIÇÃO</text>
+          <text x="175" y="105" fill="#F97316" fontSize="6" fontWeight="900" opacity="0.4" className="uppercase tracking-widest">CAPTAÇÃO</text>
           
           <ellipse cx="100" cy="180" rx="42" ry="12" stroke="#F97316" strokeWidth="1.5" strokeOpacity="0.5" />
           <text x="155" y="185" fill="#F97316" fontSize="6" fontWeight="900" opacity="0.6" className="uppercase tracking-widest">EDUCAÇÃO</text>
 
           <ellipse cx="100" cy="240" rx="28" ry="8" stroke="#F97316" strokeWidth="2" strokeOpacity="0.8" />
-          <text x="140" y="245" fill="#F97316" fontSize="6" fontWeight="900" opacity="0.9" className="uppercase tracking-widest">LTV & LUCRO</text>
+          <text x="140" y="245" fill="#F97316" fontSize="6" fontWeight="900" opacity="0.9" className="uppercase tracking-widest">RETENÇÃO & LTV</text>
         </g>
 
         <line x1="20" y1="40" x2="180" y2="40" stroke="#F97316" strokeWidth="2" strokeOpacity="0.8" filter="url(#glow-soft)" className="scan-line" />
@@ -121,8 +121,8 @@ const Funnel3D: React.FC = () => {
         </g>
 
         <g transform="translate(20, 310)" opacity="0.4">
-          <text fill="white" fontSize="5" fontWeight="bold" className="uppercase tracking-tighter">Status: {scrollIntensity > 50 ? 'FIDELIZANDO' : 'OPERANDO'}</text>
-          <text y="8" fill="#F97316" fontSize="5" fontWeight="bold" className="uppercase tracking-tighter">Retenção: 98.4%</text>
+          <text fill="white" fontSize="5" fontWeight="bold" className="uppercase tracking-tighter">Status: {scrollIntensity > 50 ? 'LUCRO ATIVO' : 'ESTÁVEL'}</text>
+          <text y="8" fill="#F97316" fontSize="5" fontWeight="bold" className="uppercase tracking-tighter">Eficiência: +30%</text>
         </g>
       </svg>
     </div>
