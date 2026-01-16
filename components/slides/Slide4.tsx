@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ShieldCheck, Heart, Users, RefreshCw, LucideIcon } from 'lucide-react';
+import { Network, BookOpen, ShieldCheck, Heart, LucideIcon } from 'lucide-react';
 import { SlideProps } from '../../types';
 
 interface MethodItem {
@@ -11,17 +11,17 @@ interface MethodItem {
 
 const Slide4: React.FC<SlideProps> = ({ isActive }) => {
   const methods: MethodItem[] = [
-    { icon: Users, title: "Onboarding", desc: "Receba a família com um processo digital que gera segurança imediata." },
-    { icon: Heart, title: "Touchpoints", desc: "Réguas de relacionamento programadas para mostrar a evolução do aluno." },
-    { icon: ShieldCheck, title: "Escuta Ativa", desc: "Canais digitais de feedback que antecipam crises e pedidos de saída." },
-    { icon: RefreshCw, title: "Fidelização", desc: "Transformamos o encerramento do ciclo em uma renovação automática." },
+    { icon: Network, title: "Pontos de Contato", desc: "Organização estratégica de cada interação com o cliente." },
+    { icon: BookOpen, title: "Educação Contínua", desc: "Doutrinação sobre seu valor para eliminar comparação por preço." },
+    { icon: ShieldCheck, title: "Redução de Atrito", desc: "Processos claros que facilitam o trabalho do seu time e o pós-venda." },
+    { icon: Heart, title: "Fidelização Ativa", desc: "Transformamos clientes em defensores que compram e indicam." },
   ];
 
   return (
     <div className={`max-w-6xl w-full transition-all duration-1000 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-      <h2 className="text-orange-500 text-lg font-bold uppercase tracking-widest mb-6">A ESTRUTURA</h2>
+      <h2 className="text-orange-500 text-lg font-bold uppercase tracking-widest mb-6">O MÉTODO LTV</h2>
       <h3 className="text-5xl md:text-6xl font-black text-white leading-tight mb-12">
-        Engenharia de <span className="text-orange-500 italic">Relacionamento.</span>
+        A estrutura que <span className="text-orange-500 italic">retém e escala.</span>
       </h3>
       
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

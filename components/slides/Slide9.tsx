@@ -1,24 +1,36 @@
 
 import React from 'react';
-import { MessageCircle, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, ShieldAlert } from 'lucide-react';
 import { SlideProps } from '../../types';
 
 const Slide9: React.FC<SlideProps> = ({ isActive }) => (
-  <div className={`max-w-5xl w-full text-center space-y-12 transition-all duration-1000 ${isActive ? 'opacity-100' : 'opacity-0'}`}>
-    <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/20 rounded-full text-orange-500 font-bold text-xs uppercase tracking-widest">
-      <ShieldCheck size={14} /> Compromisso com Resultado
-    </div>
+  <div className={`max-w-5xl w-full transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <h2 className="text-orange-500 text-center text-xl font-bold uppercase tracking-[0.4em] mb-16">PERFIL DE PARCEIRO</h2>
     
-    <h3 className="text-5xl md:text-7xl font-black text-white leading-tight">
-      Eu organizo o <span className="text-orange-500">digital</span> para que vender deixe de ser <span className="text-white/30">sorte.</span>
-    </h3>
-    
-    <p className="text-2xl text-white/50 max-w-3xl mx-auto leading-relaxed">
-      Vender é um <span className="text-white font-bold">processo de engenharia</span>. Se o seu não está funcionando, você tem um erro de projeto, não de execução.
-    </p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="bg-white/[0.02] p-10 rounded-3xl border border-white/5">
+        <h4 className="text-2xl font-black text-white mb-8 flex items-center gap-3">
+          <CheckCircle2 className="text-orange-500" /> É PARA VOCÊ SE:
+        </h4>
+        <ul className="space-y-6 text-white/60 text-lg font-medium">
+          <li>• Já tem clientes, mas o pós-venda é desorganizado.</li>
+          <li>• O time comercial reclama de leads desqualificados.</li>
+          <li>• Você quer escala sem perder o toque pessoal.</li>
+          <li>• Entende que confiança é o maior ativo do negócio.</li>
+        </ul>
+      </div>
 
-    <div className="pt-8">
-      <p className="text-orange-500 font-black text-xl italic">"Meu trabalho acaba onde a venda começa."</p>
+      <div className="bg-white/[0.01] p-10 rounded-3xl border border-white/5 opacity-50">
+        <h4 className="text-2xl font-black text-white mb-8 flex items-center gap-3">
+          <ShieldAlert className="text-white/30" /> NÃO É PARA VOCÊ SE:
+        </h4>
+        <ul className="space-y-6 text-white/30 text-lg font-medium">
+          <li>• Busca uma "fórmula mágica" sem mudar processos.</li>
+          <li>• Só se importa com o volume de vendas de hoje.</li>
+          <li>• Não está disposto a educar o seu mercado.</li>
+          <li>• Prefere continuar queimando dinheiro em tráfego frio.</li>
+        </ul>
+      </div>
     </div>
   </div>
 );

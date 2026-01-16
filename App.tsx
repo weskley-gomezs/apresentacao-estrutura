@@ -13,7 +13,7 @@ import Slide9 from './components/slides/Slide9';
 import Slide10 from './components/slides/Slide10';
 import Funnel3D from './components/Funnel3D';
 
-const WHATSAPP_URL = "https://wa.me/5561981535040?text=Olá, vi sua apresentação sobre LTV Escolar e gostaria de profissionalizar meu relacionamento com os pais.";
+const WHATSAPP_URL = "https://wa.me/5561981535040?text=Olá, vi sua apresentação sobre Estrutura de LTV e gostaria de saber como aplicar no meu negócio.";
 
 const App: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -96,7 +96,7 @@ const App: React.FC = () => {
         className="absolute bottom-24 right-10 z-30 flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-black px-6 py-4 rounded-full font-black text-sm uppercase transition-all hover:scale-105 shadow-[0_10px_40px_rgba(249,115,22,0.3)] md:flex hidden animate-pulse"
       >
         <MessageCircle size={20} />
-        Consultoria LTV
+        ESTRUTURAR LTV
       </a>
 
       <div className="absolute bottom-10 left-0 right-0 flex items-center justify-between px-10 z-20 pointer-events-none">
@@ -132,13 +132,13 @@ const App: React.FC = () => {
 
         <div className="hidden lg:flex text-white/10 text-[9px] font-bold tracking-[0.2em] items-center gap-2">
            <Maximize size={10} />
-           ESTRUTURA LTV ESCOLAR
+           ESTRUTURA DIGITAL & LTV
         </div>
       </div>
 
       <div className="absolute top-10 right-10 z-20 opacity-20">
         <div className="text-white font-black text-xs tracking-tighter uppercase">
-          SCHOOL<span className="text-orange-500">LTV</span>
+          PROCESS<span className="text-orange-500">LTV</span>
         </div>
       </div>
     </div>

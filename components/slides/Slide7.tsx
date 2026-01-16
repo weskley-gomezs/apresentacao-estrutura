@@ -1,37 +1,33 @@
 
 import React from 'react';
-import { Timer, TrendingUp, Users, ShieldCheck, MessageCircle } from 'lucide-react';
+import { School, Stethoscope, Home, Briefcase, Heart } from 'lucide-react';
 import { SlideProps } from '../../types';
 
 const Slide7: React.FC<SlideProps> = () => (
-  <div className="max-w-5xl w-full text-center">
-    <h3 className="text-5xl md:text-7xl font-black text-white mb-16">
-      RESULTADO <span className="text-orange-500">PRÁTICO</span>
+  <div className="max-w-6xl w-full text-center">
+    <h3 className="text-5xl md:text-7xl font-black text-white mb-16 uppercase tracking-tighter">
+      PARA <span className="text-orange-500 italic">QUALQUER</span> NICHO
     </h3>
     
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
       {[
-        { icon: <Timer size={48} />, title: "Menos Tempo", text: "Fim do tempo perdido com curiosos." },
-        { icon: <TrendingUp size={48} />, title: "Conversão", text: "Aumento real na taxa de fechamento." },
-        { icon: <Users size={48} />, title: "Mesmo Time", text: "Venda mais sem precisar contratar." },
-        { icon: <ShieldCheck size={48} />, title: "Previsibilidade", text: "Sem depender de sorte no dia." },
+        { icon: <School size={48} />, title: "Escolas", text: "Relacionamento com pais e retenção de alunos." },
+        { icon: <Stethoscope size={48} />, title: "Clínicas", text: "Acompanhamento e jornada do paciente." },
+        { icon: <Home size={48} />, title: "Imobiliárias", text: "Confiança entre locadores e compradores." },
+        { icon: <Briefcase size={48} />, title: "Escritórios", text: "Fidelização de clientes recorrentes." },
       ].map((item, idx) => (
-        <div key={idx} className="flex flex-col items-center">
+        <div key={idx} className="flex flex-col items-center bg-white/5 p-8 rounded-3xl border border-white/5 hover:border-orange-500/30 transition-all">
           <div className="text-orange-500 mb-6">{item.icon}</div>
           <h4 className="text-2xl font-black text-white mb-2 uppercase tracking-tighter">{item.title}</h4>
-          <p className="text-white/40 text-sm">{item.text}</p>
+          <p className="text-white/40 text-xs leading-relaxed">{item.text}</p>
         </div>
       ))}
     </div>
     
-    <a 
-      href="https://wa.me/5561981535040?text=Quero um processo previsível de vendas sem aumentar meu time."
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-orange-500 hover:bg-orange-600 text-black py-6 px-12 rounded-full font-black text-2xl uppercase tracking-tighter transition-all hover:scale-105 flex items-center gap-4 mx-auto w-fit shadow-[0_10px_40px_rgba(249,115,22,0.3)]"
-    >
-      <MessageCircle size={28} /> QUERO ESSE RESULTADO
-    </a>
+    <div className="inline-flex items-center gap-3 px-8 py-4 bg-orange-500/10 border border-orange-500/20 rounded-full">
+      <Heart className="text-orange-500" />
+      <span className="text-white font-black text-lg uppercase tracking-widest">Todo negócio vive de Relacionamento, não de Lead.</span>
+    </div>
   </div>
 );
 
